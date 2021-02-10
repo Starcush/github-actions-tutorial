@@ -1,0 +1,13 @@
+name: my workflow # work flow의 이름
+on: [push] # event Rkawl
+
+jobs:
+  build:
+    name: hello github action
+    runs-on: ubuntu-18.04
+    steps:
+      - name: checkout source code # step 이름
+        uses: actions/checkout@master # 외부에 이미 만들어진 코드를 가져와 실행
+
+      - name: echo Hello # step 이름
+        run: echo "Hello" # run을 통한 스크립트 실행: Hello 출력
