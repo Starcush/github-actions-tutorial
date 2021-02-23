@@ -23,6 +23,12 @@ jobs:
       - name: install dependencies
         run: npm install
 
+      - name: create env file
+        run: |
+          touch .env.production
+          echo REACT_APP_TEST_VARIABLE=${{ secrets.REACT_APP_TEST_VARIABLE }} >> .env.production
+          cat .env.production
+
       - name: build project
         run: npm run build
 

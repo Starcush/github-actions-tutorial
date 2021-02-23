@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import dotenv from 'dotenv';
 import './App.css';
+
+dotenv.config();
+
+const testMsg = process.env.REACT_APP_TEST_VARIABLE;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React, github actions
-        </a>
-      </header>
+      <div>
+        This is githubaction test!!
+        <span>{testMsg}</span>
+      </div>
     </div>
   );
 }
